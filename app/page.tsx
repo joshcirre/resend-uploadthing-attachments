@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { UploadDropzone } from "@/utils/uploadthing";
-import { SubmitButton } from "@/components/submit-button";
+import { SubmitButton } from "@/app/components/submit-button";
 import { sendEmail } from "@/app/actions/sendEmail";
 import toast from "react-hot-toast";
 import { getCatPictures } from "@/app/actions/getCatPictures";
