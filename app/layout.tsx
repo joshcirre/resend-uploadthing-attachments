@@ -12,6 +12,7 @@ import { extractRouterConfig } from "uploadthing/server";
 
 import { ourFileRouter } from "@/app/api/uploadthing/core";
 import { Toaster } from "react-hot-toast";
+import Image from "next/image";
 
 export default function RootLayout({
   children,
@@ -32,6 +33,14 @@ export default function RootLayout({
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
         {children}
+        <a
+          href="https://github.com/joshcirre/resend-uploadthing-attachments"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed right-6 bottom-6"
+        >
+          <Image src="/github-mark.svg" alt="Github" width={25} height={25} />
+        </a>
       </body>
     </html>
   );
