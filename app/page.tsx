@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { UploadDropzone } from "@/utils/uploadthing";
+import { UploadDropzone } from "@/app/utils/uploadthing";
 import { SubmitButton } from "@/app/components/submit-button";
 import { sendEmail } from "@/app/actions/sendEmail";
 import toast from "react-hot-toast";
@@ -34,7 +34,7 @@ export default function Home() {
         Get Random Cat Pictures
       </button>
       <div className="relative flex justify-center text-sm font-medium leading-6">
-        <span className="text-gray-900 text-xs italic">
+        <span className="text-xs italic text-gray-900">
           Or upload your own favorite cat pictures.
         </span>
       </div>
