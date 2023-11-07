@@ -1,122 +1,81 @@
 import {
-    Body,
-    Button,
-    Container,
-    Head,
-    Html,
-    Img,
-    Link,
-    Preview,
-    Section,
-    Text,
-  } from '@react-email/components';
-  import * as React from 'react';
+  Body,
+  Container,
+  Head,
+  Heading,
+  Html,
+  Preview,
+  Text,
+} from "@react-email/components";
+import * as React from "react";
 
-  interface GithubAccessTokenEmailProps {
-    username?: string;
-  }
+export const KittyEmail = ({ customMessage }: { customMessage?: string }) => (
+  <Html>
+    <Head />
+    <Preview>A friend thought you might need some love.</Preview>
+    <Body style={main}>
+      <Container
+        style={{
+          ...container,
+          textAlign: "center" as
+            | "left"
+            | "right"
+            | "center"
+            | "justify"
+            | "initial"
+            | "inherit",
+        }}
+      >
+        <Heading style={h1}>Kitty Korner</Heading>
+        <Text style={text}>
+          So we heard you like cats. Here&apos;s some cats from a friend of
+          yours who just wants to cheer you up.
+        </Text>
+        {customMessage && (
+          <Container style={quoteBox}>
+            <Text style={text}>{customMessage}</Text>
+          </Container>
+        )}
+      </Container>
+    </Body>
+  </Html>
+);
 
-  const baseUrl = 'https://demo.react.email';
+export default KittyEmail;
 
-  export const GithubAccessTokenEmail = ({
-    username = 'zenorocha',
-  }: GithubAccessTokenEmailProps) => (
-    <Html>
-      <Head />
-      <Preview>
-        A fine-grained personal access token has been added to your account
-      </Preview>
-      <Body style={main}>
-        <Container style={container}>
-          <Img
-            src={`${baseUrl}/static/github.png`}
-            width="32"
-            height="32"
-            alt="Github"
-          />
+const main = {
+  backgroundColor: "transparent",
+  margin: "0 auto",
+  fontFamily:
+    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+  colorScheme: "light dark",
+};
 
-          <Text style={title}>
-            <strong>@{username}</strong>, a personal access was created on your
-            account.
-          </Text>
+const container = {
+  margin: "auto",
+  padding: "96px 20px 64px",
+  textAlign: "center",
+};
 
-          <Section style={section}>
-            <Text style={text}>
-              Hey <strong>{username}</strong>!
-            </Text>
-            <Text style={text}>
-              A fine-grained personal access token (<Link>resend</Link>) was
-              recently added to your account.
-            </Text>
+const h1 = {
+  color: "currentColor",
+  fontSize: "24px",
+  fontWeight: "600",
+  lineHeight: "40px",
+  margin: "0 0 20px",
+};
 
-            <Button style={button}>View your token</Button>
-          </Section>
-          <Text style={links}>
-            <Link style={link}>Your security audit log</Link> ・{' '}
-            <Link style={link}>Contact support</Link>
-          </Text>
+const text = {
+  color: "currentColor",
+  fontSize: "14px",
+  lineHeight: "24px",
+  margin: "0 0 40px",
+};
 
-          <Text style={footer}>
-            GitHub, Inc. ・88 Colin P Kelly Jr Street ・San Francisco, CA 94107
-          </Text>
-        </Container>
-      </Body>
-    </Html>
-  );
-
-  export default GithubAccessTokenEmail;
-
-  const main = {
-    backgroundColor: '#ffffff',
-    color: '#24292e',
-    fontFamily:
-      '-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',
-  };
-
-  const container = {
-    width: '480px',
-    margin: '0 auto',
-    padding: '20px 0 48px',
-  };
-
-  const title = {
-    fontSize: '24px',
-    lineHeight: 1.25,
-  };
-
-  const section = {
-    padding: '24px',
-    border: 'solid 1px #dedede',
-    borderRadius: '5px',
-    textAlign: 'center' as const,
-  };
-
-  const text = {
-    margin: '0 0 10px 0',
-    textAlign: 'left' as const,
-  };
-
-  const button = {
-    fontSize: '14px',
-    backgroundColor: '#28a745',
-    color: '#fff',
-    lineHeight: 1.5,
-    borderRadius: '0.5em',
-    padding: '0.75em 1.5em',
-  };
-
-  const links = {
-    textAlign: 'center' as const,
-  };
-
-  const link = {
-    color: '#0366d6',
-    fontSize: '12px',
-  };
-
-  const footer = {
-    color: '#6a737d',
-    fontSize: '12px',
-    textAlign: 'center' as const,
-    marginTop: '60px',
-  };
+const quoteBox = {
+  border: "1px solid #ddd",
+  padding: "10px",
+  margin: "20px 0",
+  borderRadius: "5px",
+  backgroundColor: "#f9f9f9",
+};
