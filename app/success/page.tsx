@@ -18,10 +18,11 @@ export default function Success() {
           alt="Celebration cat"
         />
       </div>
-      <Link href="/">
-        <button className=" mt-12 px-4 py-2 text-2xl font-bold text-white transition-all duration-500 ease-in-out transform border-2 border-blue-700 rounded-lg shadow-lg bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 hover:-translate-y-1">
-          Send another one
-        </button>
+      <Link
+        href="/"
+        className=" mt-12 px-4 py-2 text-2xl font-bold text-white transition-all duration-500 ease-in-out transform border-2 border-blue-700 rounded-lg shadow-lg bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 hover:-translate-y-1"
+      >
+        Send Another
       </Link>
     </main>
   );
